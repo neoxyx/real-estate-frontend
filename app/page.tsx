@@ -31,7 +31,7 @@ export default function Home() {
         maxPrice: filters.maxPrice || undefined,
       };
 
-      const res = await axios.get('http://localhost:5076/api/Property', { params });
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/Property`, { params });
       setProperties(res.data);
     } catch (error) {
       console.error('Error fetching properties', error);
